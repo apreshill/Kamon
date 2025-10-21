@@ -33,7 +33,7 @@ sys.path.insert(0, ROOT)
 import pixeltable as pxt
 
 
-# UDF for transforming analysis array (Pixeltable-native!)
+# UDF for transforming analysis array (Pixeltable-native)
 @pxt.udf
 def extract_expressions(analysis: list) -> list:
     """Extract 'expr' field from each item in analysis array.
