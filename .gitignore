@@ -16,6 +16,7 @@ __pycache__/
 
 # Pixeltable
 .pixeltable/
+pixeltable/config.toml
 
 # Local database files
 kamon_db/
