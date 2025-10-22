@@ -19,19 +19,23 @@ This is the only open-source kamon dataset with paired images and linguistic des
 pip install pixeltable  # Requires Python 3.10+
 ```
 
-**Create table from published source:**
+**Create replica from published source:**
 ```python
 import pixeltable as pxt
 
-# Create local copy of the published table
-kamon = pxt.create_table(
-    'kamon_db.kamon_images',
-    source='pxt://pixeltable:demos/kamon/kamon_images',
-    if_exists='replace' # include to overwrite an existing copy
+# Create read-only replica from the published table
+pxt.create_dir('kamon_db')  # Create directory first
+k_replica = pxt.replicate(
+    remote_uri='pxt://pixeltable:demos/sakana/kamon_images',
+    local_path='kamon_db.kamon_images'
 )
 
 # Start exploring
-kamon.head()
+k_replica.head()
+
+# If you want to insert rows or add computed columns, create a writable table
+# pxt.create_dir('kamon_writable')  # Create directory first
+# kamon_writable = pxt.create_table('kamon_writable.kamon_images', source=k_replica)
 ```
 
 ## What's In The Table
