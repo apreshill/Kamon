@@ -1,0 +1,12 @@
+pixeltable>=0.4.0
+Pillow>=9.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Optional: For semantic search with embeddings (02-add_embeddings.py)
+# transformers>=4.0.0
+# sentence-transformers>=2.0.0
+# Pixeltable will prompt to install these when needed
+
